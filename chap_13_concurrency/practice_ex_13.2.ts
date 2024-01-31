@@ -1,25 +1,22 @@
-// const promise = new Promise((res, rej) => {
-//   res("Start Counting");
-// });
+const promise = new Promise<string>((resolve, reject) => {
+  resolve("Start Counting");
+});
 
-// const counter = () => console.log()
+const counter = (value: string) => console.log(value);
 
-// promise
-//   .then((txt) => {
-//     console.log(txt);
-//     return "one";
-//   })
-//   .then((val) => {
-//     console.log(val);
-//     return "two";
-//   })
-//   .then((val) => {
-//     console.log(val);
-//     return "three";
-//   })
-//   .then((val) => {
-//     console.log(val);
-//   });
-
-
-
+promise
+  .then((value) => {
+    counter(value);
+    return "One";
+  })
+  .then((value) => {
+    counter(value);
+    return "Two";
+  })
+  .then((value) => {
+    counter(value);
+    return "Three";
+  })
+  .then((value) => {
+    counter(value);
+  });

@@ -1,41 +1,36 @@
-"use strict";
-//In this exercise, you will create a counter that will output the values in sequence
-//using Promises.
-const promise = new Promise((res, rej) => {
-    res("Start Counting");
-    const counter = (val) => console.log(val);
+// Practice exercise 13.2
+// In this exercise, you will create a counter that will output the values in sequence
+// using Promises.
+// 1. Set up a Promise that resolves with a value of Start Counting.
+// 2. Create a function named counter() that has one argument that gets the value
+// and outputs it into the console.
+// 3. Set up the next function in the Promise with four then() instances, which
+// should output a value into the counter function, and return a value which
+// will provide input for the subsequent then() instance. The returned values
+// should be one, then two, then three. The screen output in the console should
+// be the following:
+// Start Counting
+// One
+// Two
+// Three
+const promise = new Promise((resolve, reject) => {
+    resolve("Promise resolved!");
 });
+let counter = (value) => console.log(value);
 promise
-    .then((txt) => {
-    console.log(txt);
-    return "one";
+    .then((value) => {
+    counter(value);
+    return "One";
 })
-    .then((val) => {
-    console.log(val);
-    return "two";
+    .then((value) => {
+    counter(value);
+    return "Two";
 })
-    .then((val) => {
-    console.log(val);
-    return "three";
+    .then((value) => {
+    counter(value);
+    return "Three";
 })
-    .then((val) => {
-    console.log(val);
+    .then((value) => {
+    counter(value);
 });
-// let promise = new Promise(function (resolve, reject) {
-//   // do something that might take a while
-//   // let's just set x instead for this example
-//   let x = 8;
-//   if (x > 10) {
-//   resolve(x); // on success
-//   } else {
-//   reject("Too low"); // on error
-//   }
-//  });
-//  promise.then(
-//   function (value) {
-//   console.log("Success:", value);
-//   },
-//   function (error) {
-//   console.log("Error:", error);
-//   }
-//  );
+export {};
