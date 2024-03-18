@@ -4,10 +4,12 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "prompt-sync": "^4.2.0",
     "undici-types": "^5.26.5"
   },
   "devDependencies": {
-    "@types/node": "^20.11.20"
+    "@types/node": "^20.11.20",
+    "@types/prompt-sync": "^4.2.3"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
